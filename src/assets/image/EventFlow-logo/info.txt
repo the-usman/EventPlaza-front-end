@@ -1,0 +1,14 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: kelson_rg
+font link: http://www.fontfabric.com/kelson-sans/
+font author: Bruno Mello
+font author site: http://www.myfonts.com/person/Bruno_Mello/
+Slogan Font: kelson_rg
+
+icon designer: Larisa Skosyrska
+icon designer link: /Lara.Skosyrska
+        
+{"bg":"transparent","icon-gradient-0":"#783192","icon-gradient-1":"#59BCC8","font":"#000000","slogan":"#141414"}
+      

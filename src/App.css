@@ -1,38 +1,713 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Open+Sans&family=Quicksand:wght@300&family=Roboto:wght@400;500&family=Source+Code+Pro:ital,wght@1,200&family=Ubuntu:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    list-style: none;
+    font-weight: 700;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logo img {
+    width: 180px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.html {
+    overflow: hidden;
+    width: 98.7vw;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.navbar {
+    width: 98.7vw;
+    display: flex;
+    align-items: center;
+    background-color: rgba(205, 206, 207, 0.3);
+    justify-content: space-evenly;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 80px;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar hr {
+    color: rgb(110, 97, 165);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar ul {
+    display: flex;
+}
+
+.navbar li {
+    margin: 3px;
+}
+
+.navbar ul a {
+    color: black;
+    text-decoration: none;
+    padding: 17px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.navbar ul a:hover {
+    background-color: rgba(110, 97, 165, 0.4);
+}
+
+.profile {
+    cursor: pointer;
+    position: relative;
+}
+
+.profile img {
+    clip-path: circle();
+}
+
+.navbar .toggle {
+    position: absolute;
+    top: 65px;
+    z-index: 1000;
+}
+
+.display {
+    display: none;
+}
+
+.navBtn {
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: transparent;
+    color: rgb(110, 97, 165);
+    border: 2px solid rgb(110, 97, 165);
+    margin: 4px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.navBtn:hover {
+    background-color: rgb(89, 184, 198);
+    border: 2px solid rgb(89, 184, 198);
+    color: white;
+    border-radius: 25px;
+}
+
+.navbar .toggle li {
+    width: 200px;
+    background-color: rgba(205, 206, 207, 0.3);
+    text-align: center;
+    padding: 15px 0px;
+    transition: 0.3s;
+}
+
+.navbar .toggle li:hover {
+    background-color: rgba(110, 97, 165, 0.4);
+}
+
+.navbar .toggle li a {
+    color: black;
+    text-decoration: none;
+}
+
+p {
+    width: 450px;
+    text-align: justify;
+}
+
+.card {
+    padding: 10px;
+    width: 500px;
+    border: 2px solid rgb(89, 184, 198);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* margin-left: 200px; */
+    margin-top: 20px;
+    transition: 0.4s;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+
+.innerCard {
+    width: 450px;
+}
+
+.card h1 {
+    font-weight: 900;
+    color: rgb(110, 97, 165);
+    padding: 10px 0px;
+}
+
+.card .imageContainer {
+    border: 2px solid rgb(89, 184, 198);
+    overflow: hidden;
+}
+
+.card .imageContainer,
+.card .imageContainer img {
+    border-radius: 10px;
+    transition: all ease 0.4s;
+}
+
+.card .imageContainer:hover img {
+    transform: scale(1.1);
+
+}
+
+.card .tag {
+    position: absolute;
+    left: 19px;
+    top: 40%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    color: white;
+    padding: 10px 40px;
+    background-color: rgb(89, 184, 198);
+    font-weight: 900;
+    border-radius: 0px;
+    transition: 0.3s;
+    z-index: 999;
+}
+
+.card .tag:hover {
+    background-color: rgb(110, 97, 165);
+    border-radius: 0px 0px 10px 10px;
+}
+
+.card .contentContainer {
+    padding: 10px 0px;
+}
+
+.card .price {
+    color: rgb(110, 97, 165) !important;
+    cursor: pointer !important;
+    font-weight: 900 !important;
+}
+
+.card .price:hover {
+    text-decoration: underline;
+}
+
+.card button,
+.iconBtn i,
+.cardBtn1, .bookedCard button{
+    padding: 10px 25px;
+    font-size: 18px;
+    background-color: transparent;
+    border: 2px solid rgb(89, 184, 198);
+    border-radius: 4px;
+    transition: 0.6s;
+}
+
+.card button:hover,
+.smallCard button:hover,
+.iconBtn i:hover,
+.cardBtn1.cardBtn1:hover, .bookedCard button:hover,.postPage button:hover {
+    background-color: rgb(110, 97, 165);
+    color: white;
+    border-radius: 25px;
+    border: 2px solid rgb(110, 97, 165);
+}
+
+.f-display {
+    display: flex;
+    padding: 10px 0px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card .innerSection {
+    padding: 10px 0px;
+    font-size: 20px;
+    cursor: pointer;
+
+}
+
+.card .innerSection i {
+    color: rgb(110, 97, 165);
+}
+
+
+.card .location p {
+    margin-left: 3px;
+}
+
+.card .actionBtn {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card .iBtns i {
+    color: rgb(89, 184, 198);
+    font-size: 26px;
+    margin: 0px 15px;
+    transition: 0.2s;
+}
+
+.card .iBtns i:hover {
+    color: rgb(110, 97, 165);
+}
+
+#authForm {
+    width: 98.7vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+#authForm h1,
+#postForm h1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: rgb(110, 97, 165);
+    font-weight: 900;
+    font-size: 50px;
+}
+
+#authForm form {
+    width: 500px;
+    height: 430px;
+    border-left: 2px solid rgb(89, 184, 198);
+    border-right: 2px solid rgb(89, 184, 198);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#authForm form input,
+#postForm form input,
+.profileInfo input,
+#postForm form textarea {
+    width: 400px;
+    padding: 10px;
+    font-size: 20px;
+
+    outline: none;
+    border: none;
+    border-bottom: 2px solid rgb(89, 184, 198);
+}
+
+#authForm form input::placeholder {
+    color: rgb(110, 97, 165) !important;
+}
+
+#authForm form input[type="submit"],
+#postForm form input[type="submit"],
+.profileInfo button {
+    color: rgb(89, 184, 198);
+    border: 2px solid rgb(89, 184, 198);
+    background-color: transparent;
+    border-radius: 5px;
+    font-weight: 900;
+    transition: 0.4s;
+}
+
+#authForm form input:focus,
+#postForm form input:focus,.profileInfo input:focus, .modalInput textarea:focus {
+    background-color: rgb(232, 240, 254);
+}
+
+#authForm form input[type="submit"]:hover,
+#postForm form input[type="submit"]:hover,
+.profileInfo button:hover {
+    border: 2px solid rgb(110, 97, 165);
+    border-radius: 25px;
+    color: white;
+    background-color: rgb(110, 97, 165);
+}
+
+#authForm form input[type="file"] {
+    border: none;
+}
+
+
+.container {
+    width: 98.7vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.postContainer {
+    padding: 80px;
+    border-left: 2px solid rgb(110, 97, 165);
+    border-right: 2px solid rgb(110, 97, 165);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.subContainer {
+    width: 80vw;
+    position: relative;
+}
+
+.profileNavbar {
+    border-bottom: 2px solid rgb(110, 97, 165);
+}
+
+.profileNavbar ul {
+    display: flex;
+    /* justify-content: space-evenly; */
+    align-items: center;
+    height: 60px;
+}
+
+
+
+.profileNavbar ul li a {
+    width: 150px;
+    padding: 20px 40px;
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.profileNavbar ul li a:hover,
+.active {
+    background-color: rgba(110, 97, 165, 0.3);
+    border-bottom: 2px solid rgb(110, 97, 165);
+}
+
+.spinner {
+    margin: 10px;
+    margin-top: 50px;
+    margin-left: 10px;
+    position: relative;
+    width: 22.4px;
+    height: 22.4px;
+    position: absolute;
+}
+
+.spinner::before,
+.spinner::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    display: block;
+    animation: spinner-b4c8mmmd 0.5s backwards, spinner-49opz7md 1.25s 0.5s infinite ease;
+    border: 5.6px solid #474bff;
+    border-radius: 50%;
+    box-shadow: 0 -33.6px 0 -5.6px #474bff;
+    position: absolute;
+}
+
+.spinner::after {
+    animation-delay: 0s, 1.25s;
+}
+
+@keyframes spinner-b4c8mmmd {
+    from {
+        box-shadow: 0 0 0 -5.6px #474bff;
+    }
+}
+
+@keyframes spinner-49opz7md {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#postForm {
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#postForm form {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    justify-content: center;
+    border-left: 2px solid rgb(89, 184, 198);
+    border-right: 2px solid rgb(89, 184, 198);
+}
+
+#postForm form p {
+    font-size: 20px;
+    margin: 10px;
+    margin-left: 70px;
+    color: rgb(110, 97, 165);
+    font-weight: 900;
+}
+
+#postForm form .Tags {
+    width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#postForm form .Tags .tag {
+    margin: 10px;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 2px solid rgb(89, 184, 198);
+    color: rgb(89, 184, 198);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#postForm form .Tags .tag:hover,
+.activeTag {
+    background-color: rgb(110, 97, 165);
+    color: white !important;
+    border: 2px solid rgb(110, 97, 165) !important;
+}
+
+.smallCard {
+    display: flex;
+    width: 70vw;
+    justify-content: space-between;
+    padding: 30px;
+    margin-top: 10px;
+    border: 2px solid rgb(89, 184, 198);
+    border-radius: 10px;
+}
+
+.smallCard p {
+    width: 300px;
+}
+
+.smallCard h3 {
+    padding: 5px;
+    color: rgb(110, 97, 165);
+    font-weight: 900;
+    width: 270px;
+}
+
+.smallCard button, .postPage button {
+    padding: 10px 30px;
+    font-size: 20px;
+    background: transparent;
+    border: 2px solid rgb(89, 184, 198);
+    margin-top: 10px;
+    color: rgb(89, 184, 198);
+    transition: 0.5s;
+}
+
+.smallCard .location {
+    padding: 10px 0px;
+    width: 250px;
+    font-size: 20px;
+    text-align: justify;
+}
+
+.smallCard .lastDate {
+    padding: 0px 0px 5px 0px;
+    font-size: 20px;
+}
+
+.section2 {
+    margin: 10px 0px;
+}
+
+.smallCard .price {
+    color: rgb(110, 97, 165);
+    font-size: 25px;
+
+}
+
+.smallCard i {
+    padding: 0px 4px;
+    color: rgb(110, 97, 165);
+}
+
+.model1 {
+    margin: -10px;
+    margin-left: -300px;
+    border: none;
+}
+
+.iconBox {
+    position: absolute;
+    top: 20%;
+    left: 92%;
+}
+
+.iconBtn i {
+
+    font-size: 30px;
+    color: rgb(89, 184, 198);
+    margin-top: 30px;
+}
+
+.m-i {
+    top: 40%;
+}
+
+.flex-colum {
+    flex-direction: column;
+}
+
+.profileInfo {
+    display: flex;
+    flex-direction: column;
+}
+.profileInfo button {
+    padding: 10px 0px;
+}
+
+.profileInfo label{
+    
+    color: rgb(110, 97, 165);
+    padding: 10px 0;
+    font-weight: 900;
+    font-size: 25px;
+}
+.profileInfo .image{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.profileInfo .image img{
+    border: 2px solid rgb(89, 184, 198);
+    clip-path: circle();
+    z-index: -1;
+    position: relative;
+}
+
+.profileInfo .image img::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgb(110, 97, 165, 0.4);
+    z-index: 1000;
+}
+
+.conatinerAlert{
+    height: 60px;
+    position: fixed;
+    z-index: 1000000;
+    bottom: 30px;
+    right: 40px;
+}
+
+.requestCard{
+    border: 2px solid rgb(89, 184, 198);
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+.requestCard b{
+    color: rgb(110, 97, 165);
+    font-size: 35px;
+    margin:0px 5px;
+}
+
+.cardBtn1 {
+    margin: 10px 80px;
+}
+
+.modalInput textarea{
+    border: none;
+    font-size: 20px ;
+    padding: 10px;
+    width: 400px;
+    border-bottom: 2px solid rgb(89, 184, 198);
+    outline: none;
+    margin-left: 40px;
+}
+
+.bookedCard .location, .bookedCard .date, .postPage .location, .postPage .date{
+    font-size: 20px;
+    margin: 10px 0px;
+}
+
+.bookedCard .tag{
+    padding: 10px 30px;
+    border-radius: 10px ;
+    background-color: rgb(204, 204, 4);
+    color: white;
+    
+}
+.bookedCard{
+    border: 2px solid rgb(204, 204, 4);
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+.bookedCard h1{
+    color: rgb(110, 97, 165);
+    font-weight: 900;
+}
+.bookedCard i, .postPage i {
+    color: rgb(110, 97, 165);
+    font-size: 25px;
+    padding: 0px 10px;
+}
+.bookedCard .reason {
+    color: rgb(204, 17, 4);
+    padding: 20px 0px;
+}
+.bookedCard .successTag {
+    background-color: rgb(11, 204, 4);
+}
+.successCard {
+    border: 2px solid rgb(11, 204, 4);
+}
+.bookedCard .rejectTag {
+    background-color: rgb(204, 17, 4);
+}
+.rejectCard {
+    border: 2px solid rgb(204, 17, 4);
+}
+
+.heroSection{
+    width: 98.7vw;
+    height: 70vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.heroSection h1{
+    color: white;
+    font-weight: 900;
+    font-size: 55px;
+    padding: 40px 80px;
+    background-color: rgb(110, 97, 165);
+    border-radius: 60px;
+}
+
+.postPage h1{
+    margin: 40px 0px;
+    font-weight: 900;
+    color: rgb(110, 97, 165);
+}
+
+.postPage p {
+    width: 100%;
+}
+
+.postPage .locationDateBox {
+    margin: 40px 0px;
+    padding: 40px 0px;
+    border-top: 2px solid rgb(89, 184, 198);
+    border-bottom: 2px solid rgb(89, 184, 198);
+}
+
+.postPage button{
+    float: right;
 }
